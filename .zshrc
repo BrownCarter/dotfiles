@@ -1,0 +1,1 @@
+/home/brown/.zshrc
