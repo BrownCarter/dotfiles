@@ -1,0 +1,1 @@
+/home/brown/.xmonad/xmonad-session-rc
