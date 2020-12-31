@@ -67,7 +67,7 @@ myLauncher = "rofi -show drun -show-icons -columns 3 -width 70"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["\62056","\61728","\61563","\61501","\61899"] ++ map show [5..9]
+myWorkspaces = ["\62056","\61728","\61563","\61501","\61899"] ++ map show [6..9]
 
 
 ------------------------------------------------------------------------
