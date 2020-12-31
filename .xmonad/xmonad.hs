@@ -1,6 +1,6 @@
 import System.IO
 import System.Exit
--- import System.Taffybar.Hooks.PagerHints (pagerHints)
+import System.Taffybar.Support.PagerHints (pagerHints)
 
 import qualified Data.List as L
 
@@ -67,7 +67,7 @@ myLauncher = "rofi -show drun -show-icons -columns 3 -width 70"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["\61728","\62056","\61897","\61563"] ++ map show [5..9]
+myWorkspaces = ["\62056","\61728","\61563","\61501","\61899"] ++ map show [5..9]
 
 
 ------------------------------------------------------------------------
@@ -86,17 +86,19 @@ myWorkspaces = ["\61728","\62056","\61897","\61563"] ++ map show [5..9]
 --
 myManageHook = composeAll
     [
-      className =? "Google-chrome"                --> doShift "2:web"
+      className =? "Google-chrome"                --> doShift "\62056"
     , resource  =? "desktop_window"               --> doIgnore
     , className =? "Galculator"                   --> doCenterFloat
     , className =? "Steam"                        --> doCenterFloat
     , className =? "Gimp"                         --> doCenterFloat
+    , className =? "mate-terminal"                --> doShift "\61728"
+    , className =? "caja"                         --> doShift "\61563"
     , resource  =? "gpicview"                     --> doCenterFloat
     , className =? "MPlayer"                      --> doCenterFloat
     , className =? "Pavucontrol"                  --> doCenterFloat
     , className =? "Mate-power-preferences"       --> doCenterFloat
     , className =? "Xfce4-power-manager-settings" --> doCenterFloat
-    , className =? "VirtualBox"                   --> doShift "4:vm"
+    , className =? "vlc"                          --> doShift "\61501"
     , className =? "Xchat"                        --> doShift "5:media"
     , className =? "stalonetray"                  --> doIgnore
     , isFullscreen                                --> (doF W.focusDown <+> doFullFloat)
@@ -504,7 +506,7 @@ main = do
                                ]
                                False
          $ ewmh
-         -- $ pagerHints -- uncomment to use taffybar
+         $ pagerHints -- uncomment to use taffybar
          $ defaults {
          logHook = dynamicLogWithPP xmobarPP {
                   ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""-- . wrap "[" "]"
