@@ -67,7 +67,7 @@ myLauncher = "rofi -show drun -show-icons -columns 3 -width 70"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["\62056","\61728","\61563","\61501","\61899"] ++ map show [6..9]
+myWorkspaces = ["\62056", "\61728", "\61563", "\61501", "\61899", "\61558", "\62057", "\61889", "[9: Misc]"]
 
 
 ------------------------------------------------------------------------
@@ -91,18 +91,25 @@ myManageHook = composeAll
     , className =? "Galculator"                   --> doCenterFloat
     , className =? "Steam"                        --> doCenterFloat
     , className =? "Gimp"                         --> doCenterFloat
-    , className =? "mate-terminal"                --> doShift "\61728"
-    , className =? "caja"                         --> doShift "\61563"
+    , className =? "Mate-terminal"                --> doShift "\61728"
+    , className =? "Caja"                         --> doShift "\61563"
+    , className =? "jetbrains-idea"               --> doShift "\61899"
+    , className =? "jetbrains-pycharm"            --> doShift "\61899"
+    , className =? "Geany"                        --> doShift "\61899"
+    , className =? "qBittorrent"                  --> doShift "\61558"
+    , className =? "Firefox"                      --> doShift "\62057"
+    , className =? "jetbrains-datagrip"           --> doShift "\61899"
     , resource  =? "gpicview"                     --> doCenterFloat
     , className =? "MPlayer"                      --> doCenterFloat
     , className =? "Pavucontrol"                  --> doCenterFloat
     , className =? "Mate-power-preferences"       --> doCenterFloat
     , className =? "Xfce4-power-manager-settings" --> doCenterFloat
+    , className =? "Blueman-manager"              --> doCenterFloat
     , className =? "vlc"                          --> doShift "\61501"
-    , className =? "Xchat"                        --> doShift "5:media"
+    , className =? "okular"                       --> doShift "\61889"
     , className =? "stalonetray"                  --> doIgnore
     , isFullscreen                                --> (doF W.focusDown <+> doFullFloat)
-    -- , isFullscreen                             --> doFullFloat
+    -- isFullscreen                              --> doFullFloat
     ]
 
 
@@ -377,8 +384,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
 
   -- Quit xmonad.
-  , ((modMask, xK_q),
-     io (exitWith ExitSuccess))
 
   -- Restart xmonad.
   , ((modMask .|. shiftMask, xK_0),
@@ -506,7 +511,7 @@ main = do
                                ]
                                False
          $ ewmh
-         $ pagerHints -- uncomment to use taffybar
+         -- $ pagerHints -- uncomment to use taffybar
          $ defaults {
          logHook = dynamicLogWithPP xmobarPP {
                   ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""-- . wrap "[" "]"

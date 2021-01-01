@@ -3,7 +3,7 @@
 xrdb -merge .Xresources
 
 #tray 
-trayer --edge bottom --align right --SetDockType true --SetPartialStrut true \
+trayer  --tint 0x000000 --edge bottom --align right --SetDockType true --SetPartialStrut true \
  --expand true --width 10 --height 22 &
 
 hsetroot -center ~/1729760.png
