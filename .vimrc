@@ -56,7 +56,7 @@ set backspace=indent,eol,start
 set autoindent          " copy indent from current line when starting a new line
 set smartindent         " even better autoindent (e.g. add indent after '{')
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
-
+set completeopt+=longest
 """" Search settings
 
 set incsearch           " search as characters are entered

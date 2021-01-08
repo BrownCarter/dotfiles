@@ -17,7 +17,7 @@ export GRADLE_BIN=/home/brown/gradle/bin
 export SCALA_BIN=/home/brown/sbt/bin/
 export GROOVY_BIN=/home/brown/groovy/bin
 export MVN_BIN=/home/brown/Maven/bin
-export PATH=/usr/local/bin:$SCALA_BIN:$P4MERGE:$JAVA_JDK:$FASTBOOT:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/sedundnes/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
+export PATH=/usr/local/bin:$SCALA_BIN:$P4MERGE:$JAVA_JDK:$FASTBOOT:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/brown/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -33,7 +33,7 @@ ZSH_THEME="random"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( "arrow" "cloud" "amuse" "awesomepanda" )
+ZSH_THEME_RANDOM_CANDIDATES=( "arrow" "amuse" "awesomepanda" )
 source "$HOME/.vim/autoload/gruvbox_256palette.sh"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,8 +88,6 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-         emotty
-         emoji
          gradle
          mvn
          npm
@@ -160,3 +158,4 @@ alias synctime='sudo chronyd'
 alias cast='asciinema play'
 alias mouse='sudo modprobe -r psmouse && sudo modprobe psmouse'
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
