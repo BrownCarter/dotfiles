@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 #Startup App
 # compton
 if [ -z "$(pgrep picom)" ] ; then
-    picom -b &
+    picom --experimental-backends -b &
 fi
 
 # Redshift

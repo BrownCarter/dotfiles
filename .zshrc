@@ -34,7 +34,7 @@ ZSH_THEME="random"
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 ZSH_THEME_RANDOM_CANDIDATES=( "arrow" "amuse" "awesomepanda" )
-source "$HOME/.vim/autoload/gruvbox_256palette.sh"
+##source "$HOME/.vim/autoload/gruvbox_256palette.sh"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -148,6 +148,7 @@ alias ll='ls -lh'
 alias editpic='display'
 alias la='ls -lha'
 alias l='ls -CF'
+alias python=python3
 alias em='emacs -nw'
 alias dd='dd status=progress'
 alias _='sudo'

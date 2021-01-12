@@ -5,6 +5,7 @@ filetype off            " disable filetype detection (but re-enable later, see b
 " set the runtime path to include Vundle, and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'spacevim/spacevim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
