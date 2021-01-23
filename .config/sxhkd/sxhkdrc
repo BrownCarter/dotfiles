@@ -7,29 +7,49 @@
 
 # Raises volume
 XF86AudioRaiseVolume
-    amixer set Master 2%+
+    amixer set Master 5%+
 
 # Lowers volume
 XF86AudioLowerVolume
-    amixer set Master 2%-
+    amixer set Master 5%-
 
 # Mutes
 XF86AudioMute
-#amixer set Master toggle
+
+# amixer set Master toggle
     amixer -D pulse set Master 1+ toggle
+
 # terminal emulator
 super + Return
-    alacritty	
+    alacritty
+
+# terminal emulator with tmux
+super + shift + Return
+    sh /home/brown/my_tmux	
 
 # program launcher
-super + d
-    rofi -show drun -show-icons -columns 1 -width 40 -lines 5 -bw 10 -hide-scrollbar True -threads 4
+super + d 
+    rofi -show drun
+
+# window launcher
+super + shift + d
+    rofi -show window 
+
+# Power menu
+super + p
+    rofi -show power-menu -location 2 --yoffset 30 -xoffset 10 -width 15 -columns 1 -lines 6 -modi power-menu:~/.config/rofi/rofi-power-menu 
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
+# File manager
+super + a 
+  lf /home/brown
+
+# Fullsreen/Region Screenshot:
+Print + {_,shift}
+	{mate-screenshot, mate-screenshot -a}
 # bspwm hotkeys
 #
 
@@ -44,8 +64,8 @@ super + {_,shift + }w
 super + c 
 	bspc node -c
 
-super + l
-    i3lock-fancy -gf Ubuntu -- scrot -z -o
+super + shift + x
+    i3lock-fancy -gf Cool-jazz -- scrot -z -o
 
 # alternate between the tiled and monocle layout
 super + m
@@ -56,7 +76,7 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-super + g
+super + b 
 	bspc node -s biggest.window
 
 #
@@ -65,7 +85,7 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled && xdo show -N Polybar,pseudo_tiled,floating,fullscreen && xdo hide -N Polybar}
 
 
 super + ctrl + {m,x,y,z}
@@ -127,7 +147,7 @@ super + ctrl + shift + space
 
 #
 # move/resize
-# Resize floating windows
+# Move floating windows
 alt + {Left,Right,Up,Down}
     xdo move {-x -30,-x +30,-y -30,-y +30}
 
@@ -136,12 +156,12 @@ alt + shift + {Left,Right,Up,Down}
     xdo resize {-w -20,-w +20,-h -20,-h +20}
 
 # expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + {h, j, k, l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super +  {h, j, k, l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
 
 # move a floating window
 #super + {Left,Down,Up,Right}
@@ -164,4 +184,4 @@ super + @button{1-3}
 super + backslash
   xdotool search --onlyvisible --classname URxvtQuake windowunmap \
     || xdotool search --classname URxvtQuake windowmap \
-    || urxvt -name URxvtQuake -geometry 110x20+297+1
+    || urxvt -name URxvtQuake -geometry 106x20+297+1

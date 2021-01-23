@@ -1,7 +1,10 @@
 # If you come from bash you might have to change your $PATH.export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ANDROID_SDK=/home/brown/Android/Sdk
+export ANDROID_HOME=/home/brown/Android/Sdk
+export VIM=/opt/vim74/bin
 export FASTBOOT=/home/brown/Downloads/platform-tools
 export P4MERGE=/home/brown/p4v/bin
+export ANDROID_PREFS_ROOT=/home/brown/Android/Sdk
+export ANDROID_EMULATOR_HOME=/home/brown/.android
 export _JAVA_OPTIONS=-Xmx4256m
 export SASS=/home/brown/dart-sass/
 export DART=/home/brown/dart-sass/src
@@ -17,7 +20,7 @@ export GRADLE_BIN=/home/brown/gradle/bin
 export SCALA_BIN=/home/brown/sbt/bin/
 export GROOVY_BIN=/home/brown/groovy/bin
 export MVN_BIN=/home/brown/Maven/bin
-export PATH=/usr/local/bin:$SCALA_BIN:$P4MERGE:$JAVA_JDK:$FASTBOOT:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/brown/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
+export PATH=/usr/local/bin:$SCALA_BINi:$VIM:$ANDROID_HOME:$ANDROID_EMULATOR_HOME:$ANDROID_PREFS_ROOT/build-tools/29.0.3:$P4MERGE:$JAVA_JDK:$FASTBOOT:$ANDROID_PREFS_ROOT/emulator/:$ANDROID_PREFS_ROOT/system-images/:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/brown/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -148,6 +151,7 @@ alias ll='ls -lh'
 alias editpic='display'
 alias la='ls -lha'
 alias l='ls -CF'
+alias clock='tty-clock'
 alias python=python3
 alias em='emacs -nw'
 alias dd='dd status=progress'
