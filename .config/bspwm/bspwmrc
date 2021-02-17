@@ -41,9 +41,9 @@ bspc config focus_by_distance    true
 bspc config focus_follows_pointer true
 bspc config history_aware_focus  true
 bspc config pointer_modifier     mod1 
-bspc config pointer_action1 none
-bspc config pointer_action2 resize_corner
-bspc config pointer_action3 move
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner 
 
 bspc rule -a Gimp-2.10 desktop='^4' state=floating follow=on
 bspc rule -a Chromium desktop='^1'
