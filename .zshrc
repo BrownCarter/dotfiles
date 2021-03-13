@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ANDROID_HOME=/home/brown/Android/Sdk
+export VSCodium=/home/VSCodium/bin
 export VIM=/opt/vim74/bin
 export FASTBOOT=/home/brown/Downloads/platform-tools
 export P4MERGE=/home/brown/p4v/bin
@@ -20,7 +21,7 @@ export GRADLE_BIN=/home/brown/gradle/bin
 export SCALA_BIN=/home/brown/sbt/bin/
 export GROOVY_BIN=/home/brown/groovy/bin
 export MVN_BIN=/home/brown/Maven/bin
-export PATH=/usr/local/bin:$SCALA_BINi:$VIM:$ANDROID_HOME:$ANDROID_EMULATOR_HOME:$ANDROID_PREFS_ROOT/build-tools/29.0.3:$P4MERGE:$JAVA_JDK:$FASTBOOT:$ANDROID_PREFS_ROOT/emulator/:$ANDROID_PREFS_ROOT/system-images/:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/brown/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
+export PATH=/usr/local/bin:$SCALA_BIN:$VSCodium:$VIM:$ANDROID_HOME:$ANDROID_EMULATOR_HOME:$ANDROID_PREFS_ROOT/build-tools/29.0.3:$P4MERGE:$JAVA_JDK:$FASTBOOT:$ANDROID_PREFS_ROOT/emulator/:$ANDROID_PREFS_ROOT/system-images/:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/brown/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -142,10 +143,10 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 alias c='clear'
 alias cls='clear'
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ll='ls -lh'
 alias editpic='display'
@@ -156,6 +157,12 @@ alias python=python3
 alias em='emacs -nw'
 alias dd='dd status=progress'
 alias _='sudo'
+alias ell='exa --long --header --icons --sort=ext'
+alias els='exa --icons'
+alias ela='exa --all --icons'
+alias gitls='exa --long --git --icons'
+alias elx='exa --long --extended'
+alias elr='exa --recurse'
 alias _i='sudo -i'
 alias please='sudo'
 alias rcopy='rsync -ah --progress'
