@@ -36,9 +36,9 @@ bspc config left_padding         0
 bspc config right_padding        0
 bspc config top_padding          20 
 bspc config ignore_ewmh_focus    false
-bspc config click_to_focus       true
+bspc config click_to_focus      true 
 bspc config focus_by_distance    true
-bspc config focus_follows_pointer true
+bspc config focus_follows_pointer false
 bspc config history_aware_focus  true
 bspc config pointer_modifier     mod1 
 bspc config pointer_action1 move
@@ -52,13 +52,20 @@ bspc rule -a Blueman-manager state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Mate-terminal desktop='^2' follow=on
+bspc rule -a qBittorrent desktop='^8' follow=on
 bspc rule -a vlc desktop='^5' follow=on
 bspc rule -a Caja desktop='^3' follow=on
 bspc rule -a Google-chrome desktop='^1' follow=on
 bspc rule -a TelegramDesktop desktop='^7' follow=on
+bspc rule -a Wpsoffice desktop='^0' follow=on
 bspc rule -a Alacritty desktop='^2' follow=on
+bspc rule -a libreoffice-writer desktop='^0' follow=on
+bspc rule -a libreoffice-startcenter desktop='^0' follow=on
+bspc rule -a libreoffice-base desktop='^0' follow=on
 bspc rule -a okular desktop='^6' follow=on
 bspc rule -a jetbrains-idea desktop='^4'
 bspc rule -a jetbrains-pycharm desktop='^4'
+bspc rule -a "Foxit Reader" desktop='^6' follow=on
+bspc rule -a Evince desktop='^6' follow=on
 bspc rule -a jetbrains-datagrip desktop='^4'
 bspc rule -a VSCodium desktop='^4'

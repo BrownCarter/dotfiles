@@ -4,21 +4,6 @@
 ##########################
 #System
 ##########################
-
-# Raises volume
-XF86AudioRaiseVolume
-    amixer set Master 5%+
-
-# Lowers volume
-XF86AudioLowerVolume
-    amixer set Master 5%-
-
-# Mutes
-XF86AudioMute
-
-# amixer set Master toggle
-    amixer -D pulse set Master 1+ toggle
-
 # terminal emulator
 super + Return
     alacritty
@@ -41,7 +26,7 @@ super + p
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; dunstify 'sxhkd' 'Reloaded config'
 
 # File manager
 super + a 
@@ -50,8 +35,6 @@ super + a
 # Fullsreen/Region Screenshot:
 Print + {_,shift}
 	{mate-screenshot, mate-screenshot -a}
-# bspwm hotkeys
-#
 
 # quit/restart bspwm
 super + {q,r}
@@ -60,6 +43,7 @@ super + {q,r}
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
+
 # close 
 super + c 
 	bspc node -c
@@ -73,6 +57,7 @@ super + m
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
+
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
@@ -80,21 +65,16 @@ super + y
 super + b 
 	bspc node -s biggest.window
 
-#
 # state/flags
-#
 
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled && xdo show -N Polybar,pseudo_tiled,floating,fullscreen && xdo hide -N Polybar}
 
-
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
 # focus/swap
-#
 
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
@@ -126,7 +106,6 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
 # preselect
 #
 
@@ -167,6 +146,21 @@ super + {h, j, k, l}
 super +  {h, j, k, l}
   bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
+#Volume Control
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+  amixer set Master toggle
+
+#Brightness control
+XF86MonBrightnessDown
+	xbacklight -dec 5
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+# mouse control
 super + button{1-3}
   bspc pointer -g {move,resize_side,resize_corner}
 
@@ -175,3 +169,7 @@ super + !button{1-3}
 
 super + @button{1-3}
   bspc pointer -u
+
+# scripts
+super + slash 
+  bash /home/brown/.config/sxhkd/script.sh
