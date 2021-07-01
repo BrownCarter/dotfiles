@@ -131,3 +131,6 @@ if ! shopt -oq posix; then
   fi
 fi
 source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -4,12 +4,12 @@ env:
 
 window:
   dimensions:
-    columns: 80
+    columns: 80 
     lines: 24
 
   padding:
-    x: 10
-    y: 10
+    x: 15
+    y: 15
 
   dynamic_padding: false
 
@@ -25,11 +25,12 @@ scrolling:
 
 font:
   normal:
-    family: Roboto Mono for Powerline
+    #family: "Hack Nerd Font"
+    family: "Roboto Mono NF"
     style: Regular
 
   bold:
-    family: Roboto Mono for Powerline
+    family: Hack 
     style: Bold
 
   italic:
@@ -40,10 +41,10 @@ font:
     family: cooljazz
     style: Bold Italic
 
-  size: 13.5 
+  size: 14 
 
   offset:
-    x: 0
+    x: 0 
     y: 0
 
   glyph_offset:
@@ -113,7 +114,7 @@ mouse:
 
   hide_when_typing: false
 
-  url:
+  hint:
     launcher:
       program: xdg-open
 

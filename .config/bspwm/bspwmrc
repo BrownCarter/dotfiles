@@ -2,8 +2,6 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 ~/.config/polybar/launch.sh --cuts
 wmname LG3D &
-#Startup App
-# compton
 if [ -z "$(pgrep picom)" ] ; then
     picom --experimental-backends -b &
 fi
@@ -16,9 +14,6 @@ fi
 if [ -z "$(pgrep synapse)" ] ; then
     synapse -c &
 fi
-
-
-
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -53,9 +48,13 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Mate-terminal desktop='^2' follow=on
 bspc rule -a qBittorrent desktop='^8' follow=on
+bspc rule -a Zeal desktop='^10' follow=on
 bspc rule -a vlc desktop='^5' follow=on
 bspc rule -a Caja desktop='^3' follow=on
 bspc rule -a Google-chrome desktop='^1' follow=on
+bspc rule -a FireFox desktop='^1' follow=on
+bspc rule -a Nightly desktop='^1' follow=on
+bspc rule -a Navigator desktop='^1' follow=on
 bspc rule -a TelegramDesktop desktop='^7' follow=on
 bspc rule -a Wpsoffice desktop='^0' follow=on
 bspc rule -a Alacritty desktop='^2' follow=on
@@ -66,6 +65,7 @@ bspc rule -a okular desktop='^6' follow=on
 bspc rule -a jetbrains-idea desktop='^4'
 bspc rule -a jetbrains-pycharm desktop='^4'
 bspc rule -a "Foxit Reader" desktop='^6' follow=on
+bspc rule -a "Atril" desktop='^6' follow=on
 bspc rule -a Evince desktop='^6' follow=on
 bspc rule -a jetbrains-datagrip desktop='^4'
 bspc rule -a VSCodium desktop='^4'
